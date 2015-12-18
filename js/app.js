@@ -6,7 +6,7 @@ var app = angular.module("FireJobApp", [
 	'ngRoute',
 	'firebase'
 ])
-.constant('FBURL', 'https://firejob-app.firebaseio.com/')
+.constant('FBURL', 'https:/<URL-de-Tu-App>.firebaseio.com/')
 .config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
