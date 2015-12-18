@@ -1,0 +1,17 @@
+<h3>Buscar Ofertas de Trabajo</h3>
+</br>
+
+<a class="list-group" ng-repeat="t in trabajos" ng-href="#/detalle/{{t.$id}}">
+  <div class="list-group-item">
+    <div class="row-picture">
+      <img class="img-circle avatar-m" ng-src="{{t.gravatar}}" alt="icon">
+    </div>
+    <div class="row-content">
+      <div class="least-content">{{t.fecha | date: 'short'}}</div>
+      <h4 class="list-group-item-heading">{{t.titulo}}</h4>
+
+      <p class="list-group-item-text">{{t.descripcion}}</p>
+    </div>
+  </div>
+  <div class="list-group-separator"></div>
+</a>

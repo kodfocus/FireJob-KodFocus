@@ -1,0 +1,29 @@
+<h3 class="text-center">Registrarme</h3>
+
+</br>
+<form class="form-auth" ng-submit="registro(usuario)">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+          <input type="text" ng-model="usuario.nombre" class="form-control" placeholder="Nombre">
+        </div>
+      </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+          <input type="email" ng-model="usuario.email" class="form-control" placeholder="Correo Electrónico">
+        </div>
+      </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
+          <input type="password" ng-model="usuario.password" class="form-control" placeholder="Contraseña">
+        </div>
+      </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-danger">Registrarme</button>
+  </div>
+</form>

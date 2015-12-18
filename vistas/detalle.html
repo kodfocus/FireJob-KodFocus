@@ -1,0 +1,25 @@
+<h3>Detalle Oferta de Trabajo</h3>
+</br>
+
+<div class="list-group">
+  <div class="list-group-item">
+    <div class="row-picture">
+      <img class="img-circle" ng-src="{{trabajoElegido.gravatar}}" alt="icon">
+    </div>
+    <div class="row-content">
+      <div class="least-content"><a ng-href="#/editar/{{trabajoElegido.$id}}" class="btn btn-primary">Editar</a></div>
+      <h4 class="list-group-item-heading">{{trabajoElegido.titulo}}</h4><p><strong>Empresa: </strong>{{trabajoElegido.empresa}}</p>
+
+      <p class="list-group-item-text"><strong>Descripción: </strong>{{trabajoElegido.descripcion}}</p></br>
+      <div class="col-md-6">
+        <p class="list-group-item-text"><strong>Ubicación: </strong>{{trabajoElegido.ubicacion}}</p></br>
+        <p class="list-group-item-text"><strong>Jornada: </strong>{{trabajoElegido.jornada}}</p>
+      </div>
+      <div class="col-md-6">
+        <p class="list-group-item-text"><strong>Categoría: </strong>{{trabajoElegido.categoria}}</p></br>
+        <p class="list-group-item-text"><strong>Salario: </strong>{{trabajoElegido.salario}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="list-group-separator"></div>
+</div>

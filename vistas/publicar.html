@@ -1,0 +1,68 @@
+<h3>Publicar Ofertas de Trabajo</h3>
+
+</br>
+<form class="form-publicar" ng-submit="publicarTrabajo(trabajo)">
+  <div class="col-md-6">
+	  <div class="form-group">
+	    <label>Título</label>
+	    <input type="text" ng-model="trabajo.titulo" class="form-control" placeholder="Título del trabajo">
+	  </div>
+  </div>
+  <div class="col-md-6">
+	  <div class="form-group">
+	    <label>Empresa</label>
+	    <input type="text" ng-model="trabajo.empresa" class="form-control" placeholder="Nombre de la empresa">
+	  </div>
+  </div>
+  <div class="col-md-12">
+	  <div class="form-group">
+	    <label>Descripción</label>
+	    <textarea class="form-control" ng-model="trabajo.descripcion" rows="3" placeholder="Descripción del trabajo"></textarea>
+	  </div>
+  </div>
+  <div class="col-md-6">
+	  <div class="form-group">
+	    <label>Categoría</label>
+	    <select class="form-control" ng-model="trabajo.categoria">
+		  <option value="Marketing-Ventas">Marketing / Ventas</option>
+		  <option value="Administración-Oficina">Administración / Oficina</option>
+		  <option value="Atencion-Cliente">Atención / Cliente</option>
+		  <option value="Informatica-Telecomunicaciones">Informática / Telecomunicaciones</option>
+		  <option value="Produccion-Operaciones">Producción / Operaciones</option>
+		</select>
+	  </div>
+  </div>
+  <div class="col-md-6">
+	  <div class="form-group">
+	    <label>Ubicación</label>
+	    <select class="form-control" ng-model="trabajo.ubicacion">
+		  <option value="Cortes">Cortés</option>
+		  <option value="Francisco-Morazan">Francisco Morazán</option>
+		  <option value="Atlántida">Atlántida</option>
+		  <option value="Comayagua">Comayagua</option>
+		  <option value="Yoro">Yoro</option>
+		</select>
+	  </div>
+  </div>
+  <div class="col-md-6">
+	  <div class="form-group">
+	    <label>Jornada</label>
+	    <select class="form-control" ng-model="trabajo.jornada">
+		  <option value="Matutina">Matutina</option>
+		  <option value="Vespertina">Vespertina</option>
+		  <option value="Nocturna">Nocturna</option>
+		  <option value="Completa">Completa</option>
+		</select>
+	  </div>
+  </div>
+  <div class="col-md-6">
+	  <div class="form-group">
+	    <label>Salario</label>
+	    <input type="number" ng-model="trabajo.salario" class="form-control" placeholder="Salario mensual">
+	  </div>
+  </div>
+
+  <div class="text-center">
+  	<button type="submit" class="btn btn-danger">Publicar</button>
+  </div>
+</form>
