@@ -2,13 +2,14 @@
 
 app.factory("Trabajo", function(FBURL, $firebaseArray, $firebaseObject, Aut) {
 
-	var ref = new Firebase(FBURL);
-	var trabajos = $firebaseArray(ref.child("trabajos"));
-	var usuario = Aut.usuario;
+	var ref = new Firebase(FBURL); //Referencia a la App de Firebase
+	var trabajos = $firebaseArray(ref.child("trabajos"));//Nodo hijo 'trabajos'
+	var usuario = Aut.usuario;//Información del usuario que inició sesión
 
 	var Trabajo = {
-		all: trabajos,
+		all: trabajos, //Muestra todas las ofertas de trabajo
 
+		//Función para obtener la oferta de Trabajo basado en su Id
 		obtenerTrabajo: function(trabajoId){
 			return $firebaseObject(ref.child("trabajos").child(trabajoId));
 		},

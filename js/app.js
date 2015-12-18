@@ -1,12 +1,15 @@
 'use strict'
 
+// Modulo de la Aplicacion
 var app = angular.module("FireJobApp", [
 	'ngAnimate',
 	'ngResource',
 	'ngRoute',
 	'firebase'
 ])
+// Constante para hacer referencia a la App de Firebase
 .constant('FBURL', 'https:/<URL-de-Tu-App>.firebaseio.com/')
+// Rutas de la Aplicación
 .config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {

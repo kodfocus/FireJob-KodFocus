@@ -1,12 +1,12 @@
 'use strict'
 
 app.factory("Aut", function(FBURL, $firebaseAuth, $firebaseObject) {
-	var ref = new Firebase(FBURL);
-	var aut = $firebaseAuth(ref);
+	var ref = new Firebase(FBURL); //Referencia a la App de Firebase
+	var aut = $firebaseAuth(ref);  //Servicio de Firebase para autenticación
 
 	var Aut = {
 
-		usuario:{},
+		usuario:{}, //Objeto que maneja la información del usuario que ha iniciado sesión
 
 		crearPerfil: function(uid, usuario){
 			var perfil = {
@@ -15,6 +15,7 @@ app.factory("Aut", function(FBURL, $firebaseAuth, $firebaseObject) {
 				gravatar: get_gravatar(usuario.email, 40)
 			}
 
+			//Función para crear el Nodo 'usuarios' en caso de que se haya registrado un nuevo usuario
 			ref.onAuth(function(authData) {
 			  if (authData) {
 			    return ref.child("usuarios").child(authData.uid).set({
@@ -25,6 +26,7 @@ app.factory("Aut", function(FBURL, $firebaseAuth, $firebaseObject) {
 			});
 		},
 
+		//Iniciar sesión con email y password
 		sesion: function(usuario){
 			return aut.$authWithPassword({
 			  email    : usuario.email,
@@ -32,19 +34,22 @@ app.factory("Aut", function(FBURL, $firebaseAuth, $firebaseObject) {
 			});
 		},
 
+		//Registrar usuario con email y password
 		registro: function(usuario){
 			return aut.$createUser({
 		        email: usuario.email,
 		        password: usuario.password
 		    }).then(function (){
+		    	//Iniciar sesión al registrar el usuario
 		    	return Aut.sesion(usuario);
 		    }).then(function (authData){
+		    	//Crear 'profile', perfil del usuario con su nombre, email, gravatar
 		    	return Aut.crearPerfil(authData.uid, usuario);
 		    });
 		},
 
 		sesionIniciada: function(){
-			return !!Aut.usuario.provider;
+			return !!Aut.usuario.provider; //Devuelve false, null en caso de que el usuario haya o no iniciado sesión.
 		},
 
 		cerrarSesion: function(){
@@ -53,6 +58,7 @@ app.factory("Aut", function(FBURL, $firebaseAuth, $firebaseObject) {
 
 	}
 
+	//Funcion para copiar en el objeto usuario{} la info del usuario que inició sesión
 	aut.$onAuth(function(authData) {
 		if(authData) {      
 	      angular.copy(authData, Aut.usuario);
@@ -69,6 +75,7 @@ app.factory("Aut", function(FBURL, $firebaseAuth, $firebaseObject) {
 		}
 	});
 
+	//Función para obetener el Gravatar del usuario, de acuerdo al email
 	function get_gravatar(email, size) {
 
 	      email = email.toLowerCase();

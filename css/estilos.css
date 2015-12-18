@@ -1,4 +1,4 @@
-
+/* Estilos para las dimensiones de los formularios */
 .form-publicar {
   max-width:700px;
   margin:0 auto;  
@@ -10,6 +10,7 @@
   margin:0 auto;  
   padding:1px 25px 25px 25px;
 }
+/* Fin estilo de los formularios */
 
 .avatar {
     width: 28px;
@@ -24,6 +25,8 @@ a, a:hover, a:focus {
   color: #121515;
 }
 
+
+ /* Estilos para la vista Buscar */
 
 .list-group {
     border-radius: 0;
@@ -83,3 +86,5 @@ a, a:hover, a:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     float: right;
 }
+
+/* Fin de Estilos Vista Buscar */
